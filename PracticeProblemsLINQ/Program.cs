@@ -26,7 +26,10 @@ namespace PracticeProblemsLINQ
                 new Customer(3, "Jason", "Ryan"),
                 new Customer(4, "Dan", "Laffey");
 
-            Customer mike = LinqProblems.RunProblem3(customers); }
+            Customer mike = LinqProblems.RunProblem3(customers);
+            Customer newGuy = LinqProblems.RunProblem4(customers);
+
+
         
 
 

@@ -53,9 +53,10 @@ namespace PracticeProblemsLINQ
         //Then, update that customer's first name and last name to completely different names and return the newly updated customer from the method.
         public static Customer RunProblem4(List<Customer> customers)
         {
-            //code
-
-            //return
+            Customer customer = (from x in customers where x.Id == 3 select x).First();
+            customer.FirstName = ("New First Name");
+            customer.LastName = ("New Last Name");
+            return customer;
 
         }
         #endregion
