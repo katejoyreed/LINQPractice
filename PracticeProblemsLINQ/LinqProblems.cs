@@ -10,7 +10,7 @@ namespace PracticeProblemsLINQ
     {
         //Weighted project points: /10
         //Project points: /25
-       
+
         #region Problem 1 
         //(5 points) Problem 1
         //Using LINQ, write a method that takes in a list of strings and returns all words that contain the substring “th” from a list.
@@ -21,19 +21,20 @@ namespace PracticeProblemsLINQ
 
         }
         #endregion
-        
-        
+
+
         #region Problem 2 
         //(5 points) Problem 2
         //Using LINQ, write a method that takes in a list of strings and returns a copy of the list without duplicates.
         public static List<string> RunProblem2(List<string> names)
         {
-            //code
-
-            //return
+            List<string> noDuplicates = names.Distinct().ToList();
+            return noDuplicates;
 
         }
         #endregion
+        
+
 
         #region Problem 3
         //(5 points) Problem 3

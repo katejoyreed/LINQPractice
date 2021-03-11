@@ -16,7 +16,7 @@ namespace PracticeProblemsLINQ
 
             //Problem 2
             List<string> names = new List<string>() { "Mike", "Brad", "Nevin", "Ian", "Mike" };
-
+            List<string> noDuplicates = LinqProblems.RunProblem2(names);
 
             //Problem 3 & Problem 4
             List<Customer> customers = new List<Customer>()
@@ -24,8 +24,13 @@ namespace PracticeProblemsLINQ
                 new Customer(1, "Mike", "Rodgers"),
                 new Customer(2, "Nick", "Allen"),
                 new Customer(3, "Jason", "Ryan"),
-                new Customer(4, "Dan", "Laffey")
-            };
+                new Customer(4, "Dan", "Laffey");
+
+            Customer mike = LinqProblems.RunProblem3(customers); }
+        
+
+
+        }
 
 
             //Problem 5
