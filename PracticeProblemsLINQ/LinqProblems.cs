@@ -41,9 +41,8 @@ namespace PracticeProblemsLINQ
         //Using LINQ, write a method that takes in a list of customers and returns the lone customer who has the name of Mike. 
         public static Customer RunProblem3(List<Customer> customers)
         {
-            //code
-
-            //return
+            Customer mike = customers.FirstOrDefault(x => x.FirstName == "Mike");
+            return mike;
 
         }
         #endregion
