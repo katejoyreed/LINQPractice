@@ -69,10 +69,11 @@ namespace PracticeProblemsLINQ
         //Expected output: 86.125
         public static double RunProblem5(List<string> classGrades)
         {
-            //code
-
-            //return
-
+            List<double> convertedGrades = classGrades.ConvertAll(x => double.Parse(x));
+            double min = convertedGrades.Find(x => x == convertedGrades.Min());
+            convertedGrades.Remove(min);
+            double average = convertedGrades.Average();
+            return average;
         }
         #endregion
 
