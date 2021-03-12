@@ -69,11 +69,21 @@ namespace PracticeProblemsLINQ
         //Expected output: 86.125
         public static double RunProblem5(List<string> classGrades)
         {
-            List<double> convertedGrades = classGrades.ConvertAll(x => double.Parse(x));
-            double min = convertedGrades.Find(x => x == convertedGrades.Min());
-            convertedGrades.Remove(min);
-            double average = convertedGrades.Average();
-            return average;
+            List<double> finalAvg = new List<double>();
+            for (int i = 0; i < classGrades.Count; i++)
+            {
+                string[] splitStrings = (classGrades[i].Split(','));
+                List<string> splitResult = splitStrings.ToList();
+                List<double> convertedString = splitResult.ConvertAll(x => double.Parse(x));
+                double min = convertedString.Find(x => x == convertedString.Min());
+                convertedString.Remove(min);
+                double avg = convertedString.Average();
+                finalAvg.Add(avg);
+            }
+
+            double result = finalAvg.Average();
+            return result;
+            
         }
         #endregion
 
@@ -83,9 +93,46 @@ namespace PracticeProblemsLINQ
         //and returns an alphabetically ordered string corresponding to the letter frequency(i.e. "E1I1L2R2T1")
         public static string RunBonusProblem1(string word)
         {
-            //code
+            char[] newWord = word.ToCharArray();
+            Array.Sort(newWord);
+            List<string> newWordAsList = new List<string>();
+            foreach (char item in newWord)
+            {
+                string y = item.ToString();
+                newWordAsList.Add(y);
+                
+            }
+            int occurrence = 0;
+            List<string> finalList = new List<string>();
+            for (int i = 0; i < newWordAsList.Count; i++)
+            {
 
-            //return
+                string x = newWordAsList[i];
+
+                if (x != newWordAsList[i + 1])
+                {
+
+                    occurrence++;
+                    finalList.Add(x);
+
+                    
+                }
+                else if  (x == newWordAsList[i - 1] && x != newWordAsList[i + 1])
+                {
+                    occurrence++;
+                    string numString = occurrence.ToString();
+                    finalList.Add(numString);
+                }
+                
+            }
+            
+            
+           
+            string finalProduct = finalList.ToString();
+            return finalProduct;
+            
+
+
 
         }
         #endregion
